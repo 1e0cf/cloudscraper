@@ -7,14 +7,14 @@ name = "cloudscraper"
 version = "3.0.0"
 description = "Enhanced Python module to bypass Cloudflare's anti-bot page with support for v2 challenges, proxy rotation, and stealth mode."
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 authors = [
-    {name = "VeNoMouS", email = "venom@cloudscraper.io"},
-    {name = "Zied Boughdir", email = "ziedboughdir@gmail.com"}
+    { name = "VeNoMouS", email = "venom@cloudscraper.io" },
+    { name = "Zied Boughdir", email = "ziedboughdir@gmail.com" },
 ]
 maintainers = [
-    {name = "Zied Boughdir", email = "venom@cloudscraper.io"},
-    {name = "Zied Boughdir", email = "ziedboughdir@gmail.com"}
+    { name = "Zied Boughdir", email = "venom@cloudscraper.io" },
+    { name = "Zied Boughdir", email = "ziedboughdir@gmail.com" },
 ]
 keywords = [
     "cloudflare",
@@ -26,7 +26,7 @@ keywords = [
     "waf",
     "iuam",
     "bypass",
-    "challenge"
+    "challenge",
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -44,9 +44,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Software Development :: Libraries :: Application Frameworks",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
     "requests>=2.31.0",
     "requests-toolbelt>=1.0.0",
@@ -56,7 +56,7 @@ dependencies = [
     "websocket-client>=1.7.0",
     "js2py>=0.74",
     "brotli>=1.1.0",
-    "certifi>=2024.2.2"
+    "certifi>=2024.2.2",
 ]
 
 [project.optional-dependencies]
@@ -69,14 +69,14 @@ dev = [
     "isort>=5.13.0",
     "flake8>=7.0.0",
     "mypy>=1.8.0",
-    "pre-commit>=3.6.0"
+    "pre-commit>=4.2.0",
 ]
 test = [
     "pytest>=8.0.0",
     "pytest-cov>=4.0.0",
     "pytest-xdist>=3.0.0",
     "pytest-asyncio>=0.23.0",
-    "responses>=0.24.0"
+    "responses>=0.24.0",
 ]
 
 [project.urls]
@@ -140,15 +140,12 @@ python_functions = ["test_*"]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
     "integration: marks tests as integration tests",
-    "unit: marks tests as unit tests"
+    "unit: marks tests as unit tests",
 ]
 
 [tool.coverage.run]
 source = ["cloudscraper"]
-omit = [
-    "tests/*",
-    "cloudscraper/interpreters/jsfuck.py"
-]
+omit = ["tests/*", "cloudscraper/interpreters/jsfuck.py"]
 
 [tool.coverage.report]
 exclude_lines = [
@@ -159,5 +156,13 @@ exclude_lines = [
     "raise AssertionError",
     "raise NotImplementedError",
     "if 0:",
-    "if __name__ == .__main__.:"
+    "if __name__ == .__main__.:",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
+test = [
+    "responses>=0.25.7",
 ]
